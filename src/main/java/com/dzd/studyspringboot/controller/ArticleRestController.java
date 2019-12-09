@@ -3,13 +3,10 @@ package com.dzd.studyspringboot.controller;
 
 
 import com.dzd.studyspringboot.model.AjaxResponse;
-import com.dzd.studyspringboot.model.ArticleVO;
+import com.dzd.studyspringboot.model.Article;
 import com.dzd.studyspringboot.service.ArticleRestService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
@@ -23,7 +20,7 @@ public class ArticleRestController {
 
     //@PostMapping("/articleVO")
     @RequestMapping(value = "/article", method = POST, produces = "application/json")
-    public AjaxResponse saveArticle(@RequestBody ArticleVO articleVO) {
+    public AjaxResponse saveArticle(@RequestBody Article articleVO) {
 
         //log.info("saveArticle：{}",articleVO);
         articleRestServiceImpl.saveArticle(articleVO);
@@ -43,7 +40,7 @@ public class ArticleRestController {
 
     @PutMapping("/article/{id}")
     //@RequestMapping(value = "/articleVO/{id}", method = PUT, produces = "application/json")
-    public AjaxResponse updateArticle(@PathVariable Long id, @RequestBody ArticleVO articleVO) {
+    public AjaxResponse updateArticle(@PathVariable Long id, @RequestBody Article articleVO) {
         articleVO.setId(id);
 
         //articleRestService.updateArticle(articleVO);

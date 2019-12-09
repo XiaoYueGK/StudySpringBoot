@@ -2,19 +2,19 @@ package com.dzd.studyspringboot.service;
 
 
 
-import com.dzd.studyspringboot.model.ArticleVO;
+import com.dzd.studyspringboot.model.Article;
 
 import java.util.List;
 
 public interface ArticleRestService {
 
-     ArticleVO saveArticle(ArticleVO article);
+     Article saveArticle(Article article);
 
      void deleteArticle(Long id);
 
-     void updateArticle(ArticleVO article);
+     void updateArticle(Article article);
 
-     ArticleVO getArticle(Long id);
+     Article getArticle(Long id);
 
-     List<ArticleVO> getAll();
+     List<Article> getAll();
 }
